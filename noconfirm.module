@@ -1,0 +1,8 @@
+<?php
+function noconfirm_civicrm_buildForm($formName, &$form) {
+  if ($formName == 'CRM_Event_Form_Participant') {
+    $defaults['send_receipt'] = '0';
+    $form->setDefaults($defaults);
+  }
+}
+drupal_add_js(drupal_get_path('module', 'noconfirm') .'/noconfirm.js');
